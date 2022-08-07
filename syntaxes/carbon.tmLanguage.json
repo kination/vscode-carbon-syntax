@@ -1,0 +1,44 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Carbon",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.carbon",
+				"match": "\\b(if|while|for|fn|return)\\b"
+			}]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"begin": "//",
+					"end": "\\n",
+					"name": "comment.block.empty.tpl"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.carbon",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.carbon",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.carbon"
+}
