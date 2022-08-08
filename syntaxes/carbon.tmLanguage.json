@@ -10,6 +10,9 @@
 		},
 		{
 			"include": "#comments"
+		},
+		{
+			"include": "#constants"
 		}
 	],
 	"repository": {
@@ -17,7 +20,11 @@
 			"patterns": [
 				{
 					"name": "keyword.control.carbon",
-					"match": "\\b(if|else|while|for|in|break|return)\\b"
+					"match": "\\b(if|else|while|for|in|as|break|return)\\b"
+				},
+				{
+					"name": "keyword.storage.carbon",
+					"match": "\\b(fn|impl|class)\\b"
 				},
 				{
 					"name": "keyword.other.carbon",
@@ -42,6 +49,26 @@
 				{
 					"name": "constant.character.escape.carbon",
 					"match": "\\\\."
+				}
+			]
+		},
+		"constants": {
+			"patterns": [
+				{
+					"match":"\\b(false|null|true)\\b",
+					"name":"constant.language.carbon"
+				},
+				{
+					"match":"\\b(0[xX][0-9a-fA-F_]*)\\b",
+					"name":"constant.numeric.carbon"
+				},
+				{
+					"match":"\\b(([0-9][0-9_]*(\\.[0-9][0-9_]*)?)([eE](\\+|-)?[0-9][0-9_]*)?|[0-9][0-9_]*)[LlFfDd]?\\b",
+					"name":"constant.numeric.carbon"
+				},
+				{
+					"match":"(\\.[0-9][0-9_]*)([eE](\\+|-)?[0-9][0-9_]*)?[LlFfDd]?\\b",
+					"name":"constant.numeric.carbon"
 				}
 			]
 		}

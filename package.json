@@ -1,6 +1,6 @@
 {
-  "name": "carbon-lang",
-  "displayName": "carbon lang",
+  "name": "vscode-carbon-syntax",
+  "displayName": "carbon language",
   "description": "syntax highlighting",
   "version": "0.0.1",
   "engines": {
