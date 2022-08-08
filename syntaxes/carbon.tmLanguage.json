@@ -14,10 +14,16 @@
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.carbon",
-				"match": "\\b(if|while|for|fn|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.carbon",
+					"match": "\\b(if|else|while|for|in|break|return)\\b"
+				},
+				{
+					"name": "keyword.other.carbon",
+					"match": "\\b(import|package|library)\\b"
+				}
+			]
 		},
 		"comments": {
 			"patterns": [
