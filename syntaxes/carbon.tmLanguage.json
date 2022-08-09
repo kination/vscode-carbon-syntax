@@ -31,8 +31,12 @@
 					"match": "\\b(__continuation|__run|__await)\\b"
 				},
 				{
+					"name": "keyword.WIP.carbon",
+					"match": "\\b(base|abstract|virtual|protected|destructor|namespace|private)\\b"
+				},
+				{
 					"name": "keyword.other.carbon",
-					"match": "\\b(import|package|library|api|alias|external|where|returned|library|and)\\b"
+					"match": "\\b(import|package|library|api|alias|external|where|returned|library|and|addr)\\b"
 				}
 			]
 		},
