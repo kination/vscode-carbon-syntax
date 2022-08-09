@@ -20,15 +20,19 @@
 			"patterns": [
 				{
 					"name": "keyword.control.carbon",
-					"match": "\\b(if|else|while|for|in|as|break|return|var|let|match|case|constraint)\\b"
+					"match": "\\b(if|then|else|while|for|in|as|break|return|var|let|match|case|constraint)\\b"
 				},
 				{
 					"name": "keyword.storage.carbon",
-					"match": "\\b(fn|impl|class|interface|choice|external|where)\\b"
+					"match": "\\b(fn|impl|class|interface|choice)\\b"
+				},
+				{
+					"name": "keyword.experimental.carbon",
+					"match": "\\b(__continuation|__run|__await)\\b"
 				},
 				{
 					"name": "keyword.other.carbon",
-					"match": "\\b(import|package|library|api)\\b"
+					"match": "\\b(import|package|library|api|alias|external|where|returned|library|and)\\b"
 				}
 			]
 		},
