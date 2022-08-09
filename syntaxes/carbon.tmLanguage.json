@@ -20,15 +20,19 @@
 			"patterns": [
 				{
 					"name": "keyword.control.carbon",
-					"match": "\\b(if|else|while|for|in|as|break|return)\\b"
+					"match": "\\b(if|then|else|while|for|in|as|break|return|var|let|match|case|constraint)\\b"
 				},
 				{
 					"name": "keyword.storage.carbon",
-					"match": "\\b(fn|impl|class)\\b"
+					"match": "\\b(fn|impl|class|interface|choice)\\b"
+				},
+				{
+					"name": "keyword.experimental.carbon",
+					"match": "\\b(__continuation|__run|__await)\\b"
 				},
 				{
 					"name": "keyword.other.carbon",
-					"match": "\\b(import|package|library)\\b"
+					"match": "\\b(import|package|library|api|alias|external|where|returned|library|and)\\b"
 				}
 			]
 		},
@@ -55,20 +59,20 @@
 		"constants": {
 			"patterns": [
 				{
-					"match":"\\b(false|null|true)\\b",
-					"name":"constant.language.carbon"
+					"match": "\\b(false|null|true)\\b",
+					"name": "constant.language.carbon"
 				},
 				{
-					"match":"\\b(0[xX][0-9a-fA-F_]*)\\b",
-					"name":"constant.numeric.carbon"
+					"match": "\\b(0[xX][0-9a-fA-F_]*)\\b",
+					"name": "constant.numeric.carbon"
 				},
 				{
-					"match":"\\b(([0-9][0-9_]*(\\.[0-9][0-9_]*)?)([eE](\\+|-)?[0-9][0-9_]*)?|[0-9][0-9_]*)[LlFfDd]?\\b",
-					"name":"constant.numeric.carbon"
+					"match": "\\b(([0-9][0-9_]*(\\.[0-9][0-9_]*)?)([eE](\\+|-)?[0-9][0-9_]*)?|[0-9][0-9_]*)[LlFfDd]?\\b",
+					"name": "constant.numeric.carbon"
 				},
 				{
-					"match":"(\\.[0-9][0-9_]*)([eE](\\+|-)?[0-9][0-9_]*)?[LlFfDd]?\\b",
-					"name":"constant.numeric.carbon"
+					"match": "(\\.[0-9][0-9_]*)([eE](\\+|-)?[0-9][0-9_]*)?[LlFfDd]?\\b",
+					"name": "constant.numeric.carbon"
 				}
 			]
 		}
