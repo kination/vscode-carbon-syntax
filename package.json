@@ -1,25 +1,40 @@
 {
-  "name": "vscode-carbon-syntax",
-  "displayName": "carbon language",
-  "description": "syntax highlighting",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.70.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "contributes": {
-    "languages": [{
-      "id": "carbon",
-      "aliases": ["Carbon", "carbon"],
-      "extensions": [".carbon"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "carbon",
-      "scopeName": "source.carbon",
-      "path": "./syntaxes/carbon.tmLanguage.json"
-    }]
-  }
+	"name": "vscode-carbon-syntax",
+	"displayName": "carbon syntax",
+	"description": "carbon language syntax highlighter",
+	"version": "0.0.2",
+	"engines": {
+		"vscode": "^1.70.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"publisher": "kination",
+	"contributes": {
+		"languages": [
+			{
+				"id": "carbon",
+				"aliases": [
+					"Carbon",
+					"carbon"
+				],
+				"extensions": [
+					".carbon"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "carbon",
+				"scopeName": "source.carbon",
+				"path": "./syntaxes/carbon.tmLanguage.json"
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/kination/vscode-carbon-syntax.git"
+	},
+	"homepage": "https://github.com/kination/vscode-carbon-syntax/blob/main/README.md"
 }
