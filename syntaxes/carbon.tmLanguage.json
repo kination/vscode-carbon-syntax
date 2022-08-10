@@ -59,20 +59,24 @@
 		"constants": {
 			"patterns": [
 				{
-					"match": "\\b(false|null|true)\\b",
-					"name": "constant.language.carbon"
+					"match": "\\b(true|false)\\b",
+					"name": "constant.bool.carbon"
 				},
 				{
 					"match": "\\b(0[xX][0-9a-fA-F_]*)\\b",
-					"name": "constant.numeric.carbon"
+					"name": "constant.numeric.hex.carbon"
 				},
 				{
 					"match": "\\b(([0-9][0-9_]*(\\.[0-9][0-9_]*)?)([eE](\\+|-)?[0-9][0-9_]*)?|[0-9][0-9_]*)[LlFfDd]?\\b",
-					"name": "constant.numeric.carbon"
+					"name": "constant.numeric.common.carbon"
 				},
 				{
 					"match": "(\\.[0-9][0-9_]*)([eE](\\+|-)?[0-9][0-9_]*)?[LlFfDd]?\\b",
-					"name": "constant.numeric.carbon"
+					"name": "constant.numeric.float.carbon"
+				},
+				{
+					"match": "\\b(null)\\b",
+					"name": "constant.other.carbon"
 				}
 			]
 		}
