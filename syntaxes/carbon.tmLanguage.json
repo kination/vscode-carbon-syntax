@@ -6,6 +6,9 @@
 			"include": "#keywords"
 		},
 		{
+			"include": "#storages"
+		},
+		{
 			"include": "#strings"
 		},
 		{
@@ -13,6 +16,12 @@
 		},
 		{
 			"include": "#constants"
+		},
+		{
+			"include": "#punctuations"
+		},
+		{
+			"include": "#types"
 		}
 	],
 	"repository": {
@@ -23,16 +32,48 @@
 					"match": "\\b(if|then|else|while|for|in|as|break|return|var|let|match|case|constraint)\\b"
 				},
 				{
-					"name": "keyword.storage.carbon",
-					"match": "\\b(fn|impl|class|interface|choice)\\b"
-				},
-				{
-					"name": "keyword.experimental.carbon",
-					"match": "\\b(__continuation|__run|__await)\\b"
-				},
-				{
 					"name": "keyword.other.carbon",
 					"match": "\\b(import|package|library|api|alias|external|where|returned|library|and)\\b"
+				}
+			]
+		},
+		"storages": {
+			"patterns": [
+				{
+					"name": "storage.type.fn.carbon",
+					"match": "\\b(fn)\\b"
+				},
+				{
+					"name": "storage.type.impl.carbon",
+					"match": "\\b(impl)\\b"
+				},
+				{
+					"name": "storage.type.class.carbon",
+					"match": "\\b(class)\\b"
+				},
+				{
+					"name": "storage.type.interface.carbon",
+					"match": "\\b(interface)\\b"
+				},
+				{
+					"name": "storage.type.var.carbon",
+					"match": "\\b(var)\\b"
+				},
+				{
+					"name": "storage.type.let.carbon",
+					"match": "\\b(let)\\b"
+				},
+				{
+					"name": "storage.type.const.carbon",
+					"match": "\\b(const)\\b"
+				},
+				{
+					"name": "storage.type.interface.carbon",
+					"match": "\\b(interface)\\b"
+				},
+				{
+					"name": "storage.type.choice.carbon",
+					"match": "\\b(choice)\\b"
 				}
 			]
 		},
@@ -77,6 +118,14 @@
 				{
 					"match": "\\b(null)\\b",
 					"name": "constant.other.carbon"
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"match": "\\b(bool|i8|i16|i32|i64|i128|u8|u16|u32|u64|u128|f16|f32|f64|f128|String|StringView)\\b",
+					"name": "types.data.carbon"
 				}
 			]
 		}
