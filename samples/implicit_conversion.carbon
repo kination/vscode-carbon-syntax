@@ -20,6 +20,7 @@ class A {
 
 fn Main() -> i32 {
   let a: A = {.n = 1};
+  let b = 2
   let b: A = {.n = 2};
   let (x: i32, var y: i32) = (a, b);
   return x + y;

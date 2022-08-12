@@ -2,12 +2,14 @@
 	"name": "vscode-carbon-syntax",
 	"displayName": "carbon syntax",
 	"description": "carbon language syntax highlighter",
-	"version": "0.0.2",
+	"icon": "images/icon.png",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.70.0"
 	},
 	"categories": [
-		"Programming Languages"
+		"Programming Languages",
+		"Visualization"
 	],
 	"publisher": "kination",
 	"contributes": {
