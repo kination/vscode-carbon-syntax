@@ -6,7 +6,7 @@
 			"include": "#keywords"
 		},
 		{
-			"include": "#storages"
+			"include": "#storage"
 		},
 		{
 			"include": "#strings"
@@ -57,7 +57,7 @@
 				}
 			]
 		},
-		"storages": {
+		"storage": {
 			"patterns": [
 				{
 					"name": "storage.type.fn.carbon",
@@ -94,7 +94,27 @@
 				{
 					"name": "storage.type.choice.carbon",
 					"match": "\\b(choice)\\b"
-				}
+				},
+				{
+					"name": "storage.type.bool.carbon",
+					"match": "\\b(bool)\\b"
+				},
+				{
+					"name": "storage.type.auto.carbon",
+					"match": "\\b(auto)\\b"
+				},
+				{
+					"name": "storage.type.string.carbon",
+                    "match": "\\b(String)\\b"
+                },
+				{
+					"name": "storage.type.numeric.carbon",
+                    "match": "\\b(i(8|16|32|64|128)|f(8|16|32|64|128)|u(8|16|32|64|128)?)\\b"
+                },
+				{
+					"name": "storage.type.define-numeric.carbon",
+                    "match": "\\b(Carbon.UInt|Carbon.Int|Carbon.Float?)\\b"
+                }
 			]
 		},
 		"comments": {
@@ -171,7 +191,7 @@
 		"punctuations": {
             "patterns": [
                 {
-                    "match": ":\\s+?(?=(&|bool|char|usize|isize|u8|u16|u32|u64|u128|i8|i16|i32|i64|i128|f32|f64|str|Self|Option|Result|String))",
+                    "match": ":\\s+?(?=(&|bool|char|usize|isize|u8|u16|u32|u64|u128|i8|i16|i32|i64|i128|f32|f64|str|Self|Option|Result|String|auto))",
 					"name": "punctuation.separator.type.carbon"
                 },
 				{
@@ -187,7 +207,7 @@
 		"types": {
 			"patterns": [
 				{
-                    "match": "\\b(bool|char|usize|isize|u8|u16|u32|u64|u128|i8|i16|i32|i64|i128|f32|f64|str|Self|Option|Result)\\b",
+                    "match": "\\b(bool|char|usize|isize|u8|u16|u32|u64|u128|i8|i16|i32|i64|i128|f32|f64|str|Self|Option|Result|any)\\b",
 					"name": "type.definition.carbon"
                 }
 			]
