@@ -25,6 +25,26 @@
 		}
 	],
 	"repository": {
+		"string_escaped_char": {
+            "patterns": [
+                {
+                    "match": "\\\\([0-7]{3}|[abfnrtv\\\\'\"]|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4}|U[0-9a-fA-F]{8})",
+                    "name": "constant.character.escape.carbon"
+                },
+                {
+                    "match": "\\\\[^0-7xuUabfnrtv\\'\"]",
+                    "name": "invalid.illegal.unknown-escape.carbon"
+                }
+            ]
+        },
+        "string_placeholder": {
+            "patterns": [
+                {
+                    "match": "%(\\[\\d+\\])?([\\+#\\-0\\x20]{,2}((\\d+|\\*)?(\\.?(\\d+|\\*|(\\[\\d+\\])\\*?)?(\\[\\d+\\])?)?))?[vT%tbcdoqxXUbeEfFgGsp]",
+                    "name": "constant.other.placeholder.carbon"
+                }
+            ]
+        },
 		"keywords": {
 			"patterns": [
 				{
@@ -87,13 +107,40 @@
 			]
 		},
 		"strings": {
-			"name": "string.quoted.double.carbon",
-			"begin": "\"",
-			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.carbon",
-					"match": "\\\\."
+					"name": "string.quoted.double.carbon",
+					"begin": "\"",
+					"beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.begin.carbon"
+                        }
+                    },
+					"end": "\"",
+					"endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.string.end.carbon"
+                        }
+                    },
+					"patterns": [
+                        {
+                            "include": "#string_escaped_char"
+                        },
+                        {
+                            "include": "#string_placeholder"
+                        }
+                    ]
+				},
+				{
+					"name": "string.quoted.multiline.carbon",
+					"begin": "\"\"\"",
+					"end": "\"\"\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.carbon",
+							"match": "\\\\."
+						}
+					]
 				}
 			]
 		},
@@ -121,12 +168,28 @@
 				}
 			]
 		},
+		"punctuations": {
+            "patterns": [
+                {
+                    "match": ":\\s+?(?=(&|bool|char|usize|isize|u8|u16|u32|u64|u128|i8|i16|i32|i64|i128|f32|f64|str|Self|Option|Result|String))",
+					"name": "punctuation.separator.type.carbon"
+                },
+				{
+                    "match": ";",
+                    "name": "punctuation.terminator.carbon"
+                },
+				{
+                    "match": "\\.(?!\\.\\.)",
+                    "name": "punctuation.period.carbon"
+                }
+			]
+		},
 		"types": {
 			"patterns": [
 				{
-					"match": "\\b(bool|i8|i16|i32|i64|i128|u8|u16|u32|u64|u128|f16|f32|f64|f128|String|StringView)\\b",
-					"name": "types.data.carbon"
-				}
+                    "match": "\\b(bool|char|usize|isize|u8|u16|u32|u64|u128|i8|i16|i32|i64|i128|f32|f64|str|Self|Option|Result)\\b",
+					"name": "type.definition.carbon"
+                }
 			]
 		}
 	},
