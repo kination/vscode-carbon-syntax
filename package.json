@@ -3,7 +3,7 @@
 	"displayName": "carbon syntax",
 	"description": "carbon language syntax highlighter",
 	"icon": "images/icon.png",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"engines": {
 		"vscode": "^1.70.0"
 	},
@@ -23,7 +23,11 @@
 				"extensions": [
 					".carbon"
 				],
-				"configuration": "./language-configuration.json"
+				"configuration": "./language-configuration.json",
+				"icon": {
+					"light": "./images/icon.png",
+					"dark": "./images/icon.png"
+				}
 			}
 		],
 		"grammars": [
@@ -34,9 +38,20 @@
 			}
 		]
 	},
+	"iconDefinitions": {
+		"_folder_dark": {
+		  	"iconPath": "./images/icon.png"
+		}
+	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/kination/vscode-carbon-syntax.git"
 	},
-	"homepage": "https://github.com/kination/vscode-carbon-syntax/blob/main/README.md"
+	"homepage": "https://github.com/kination/vscode-carbon-syntax/blob/main/README.md",
+	"__metadata": {
+		"id": "d14c70bd-1963-4953-bc72-5f1e73d2260f",
+		"publisherDisplayName": "kination",
+		"publisherId": "4ca617d3-9db3-458b-81bf-41eca4d6a895",
+		"isPreReleaseVersion": false
+	}
 }
