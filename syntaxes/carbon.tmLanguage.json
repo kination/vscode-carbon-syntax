@@ -22,6 +22,12 @@
 		},
 		{
 			"include": "#types"
+		},
+		{
+			"include": "#packages"
+		},
+		{
+			"include": "#imports"
 		}
 	],
 	"repository": {
@@ -45,6 +51,54 @@
                 }
             ]
         },
+		"packages": {
+			"begin": "\\b(package)\\s+",
+			"end": "(?<=[\\n;])",
+			"beginCaptures": {
+                "1": {
+                    "name": "keyword.other.package.carbon"
+                }
+            },
+            "patterns": [
+				{
+                    "match": "[A-Z\\p{Lt}\\p{Lu}][A-Z\\p{Lt}\\p{Lu}_a-z\\$\\p{Lo}\\p{Nl}\\p{Ll}0-9]*(?:(?<=_)[!#%&*+\\-\\/:<>=?@^|~\\p{Sm}\\p{So}]+)?",
+                    "name": "keyword.name.package.carbon"
+                },
+                {
+                    "match": "(`[^`]+`|(?:[A-Z\\p{Lt}\\p{Lu}_a-z\\$\\p{Lo}\\p{Nl}\\p{Ll}][A-Z\\p{Lt}\\p{Lu}_a-z\\$\\p{Lo}\\p{Nl}\\p{Ll}0-9]*(?:(?<=_)[!#%&*+\\-\\/:<>=?@^|~\\p{Sm}\\p{So}]+)?|[!#%&*+\\-\\/:<>=?@^|~\\p{Sm}\\p{So}]+))",
+                    "name": "entity.name.package.carbon"
+                },
+                {
+                    "match": "\\.",
+                    "name": "punctuation.definition.package"
+                }
+			],
+			"name": "meta.package.carbon"
+		},
+		"imports": {
+			"begin": "\\b(import)\\s+",
+			"end": "(?<=[\\n;])",
+			"beginCaptures": {
+                "1": {
+                    "name": "keyword.other.import.carbon"
+                }
+            },
+            "patterns": [
+				{
+                    "match": "[A-Z\\p{Lt}\\p{Lu}][A-Z\\p{Lt}\\p{Lu}_a-z\\$\\p{Lo}\\p{Nl}\\p{Ll}0-9]*(?:(?<=_)[!#%&*+\\-\\/:<>=?@^|~\\p{Sm}\\p{So}]+)?",
+                    "name": "keyword.name.import.carbon"
+                },
+                {
+                    "match": "(`[^`]+`|(?:[A-Z\\p{Lt}\\p{Lu}_a-z\\$\\p{Lo}\\p{Nl}\\p{Ll}][A-Z\\p{Lt}\\p{Lu}_a-z\\$\\p{Lo}\\p{Nl}\\p{Ll}0-9]*(?:(?<=_)[!#%&*+\\-\\/:<>=?@^|~\\p{Sm}\\p{So}]+)?|[!#%&*+\\-\\/:<>=?@^|~\\p{Sm}\\p{So}]+))",
+                    "name": "entity.name.import.carbon"
+                },
+                {
+                    "match": "\\.",
+                    "name": "punctuation.definition.import"
+                }
+			],
+			"name": "meta.import.carbon"
+		},
 		"keywords": {
 			"patterns": [
 				{
@@ -53,11 +107,11 @@
 				},
 				{
 					"name": "keyword.other.carbon",
-					"match": "\\b(import|package|library|api|alias|external|where|returned|library|and)\\b"
+					"match": "\\b(library|api|alias|external|where|returned|and)\\b"
 				},
 				{
                     "comment": "control flow keywords",
-                    "name": "keyword.control.rust",
+                    "name": "keyword.operator.carbon",
                     "match": "->"
                 }
 			]

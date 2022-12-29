@@ -3,7 +3,7 @@
 	"displayName": "carbon syntax",
 	"description": "carbon language syntax highlighter",
 	"icon": "images/icon.png",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"engines": {
 		"vscode": "^1.70.0"
 	},
