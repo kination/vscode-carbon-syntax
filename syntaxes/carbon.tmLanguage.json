@@ -54,7 +54,12 @@
 				{
 					"name": "keyword.other.carbon",
 					"match": "\\b(import|package|library|api|alias|external|where|returned|library|and)\\b"
-				}
+				},
+				{
+                    "comment": "control flow keywords",
+                    "name": "keyword.control.rust",
+                    "match": "->"
+                }
 			]
 		},
 		"storage": {
