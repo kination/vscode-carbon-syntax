@@ -103,7 +103,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.carbon",
-					"match": "\\b(if|then|else|while|for|in|as|break|return|var|let|match|case|constraint)\\b"
+					"match": "\\b(if|then|else|while|for|in|as|break|return|var|let|match|case|constraint|impl|fn|class)\\b"
 				},
 				{
 					"name": "keyword.other.carbon",
@@ -182,6 +182,11 @@
 					"begin": "//",
 					"end": "\\n",
 					"name": "comment.block.empty.tpl"
+				},
+				{
+					"begin": "//",
+					"end": "\\n",
+					"name": "comment.line.double-slash.carbon"
 				}
 			]
 		},
@@ -260,13 +265,17 @@
 				{
                     "match": "\\.(?!\\.\\.)",
                     "name": "punctuation.period.carbon"
-                }
+                },
+				{
+					"match": "[{}\\[\\];]",
+					"name": "punctuation.definition.bracket.carbon"
+				}
 			]
 		},
 		"types": {
 			"patterns": [
 				{
-                    "match": "\\b(bool|char|usize|isize|u8|u16|u32|u64|u128|i8|i16|i32|i64|i128|f32|f64|str|Self|Option|Result|any)\\b",
+                    "match": "\\b(bool|char|usize|isize|u8|u16|u32|u64|u128|i8|i16|i32|i64|i128|f32|f64|str|Self|Option|Result|any|Sieve)\\b",
 					"name": "type.definition.carbon"
                 }
 			]
